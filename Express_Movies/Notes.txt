@@ -25,3 +25,6 @@ URL	HTTP Verb	Action	Used For	Mongoose Model Function
 /things/:id/edit	GET	edit	Return an HTML form for editing a thing	.findById
 /things/:id	PATCH/PUT	update	Update a specific thing	.findByIdAndUpdate
 /things/:id	DELETE	destroy	Delete a specific thing	.findByIdAndDelete
+
+Seed Route: A route on our server when requested will delete everything in our database and re-seed it with some starter data
+Seed File: A script we can run (usually called seed.js) that'll empty and re-seed our database.
