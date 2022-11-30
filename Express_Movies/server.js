@@ -43,7 +43,7 @@ const MoviesSchema = new Schema({
   director: {type: String, required: true},
   rating: String,
   watchAgain: Boolean,
-  cast: [{type: String}]
+  cast: [{type: String}],
 });
 
 // make Movie model
@@ -118,7 +118,6 @@ app.get("/movies/seed", (req,res)=>{
             cast: ["Alan Bagh", "Whitney Moore"]
         }
     ];
-
     
     // Delete all movies
     Movie.deleteMany({}).then((data)=>{
@@ -130,11 +129,11 @@ app.get("/movies/seed", (req,res)=>{
     })
 })
 
-// Index route
+// INDEX
 // The Async/Await Method
 app.get("/movies", async (req, res) => {
     try{
-        const movies = await movies.find({});
+        const movies = await Movie.find({});
         res.render("movies/Index", { movies });
     }catch(err){
         res.json({err})
@@ -162,7 +161,19 @@ app.get("/movies", async (req, res) => {
 //   });
 // });
 
-  //////////////////////////////////////////////
+// SHOW
+app.get("movies/:id", async (req,res)=>{
+    const id = req.params.id
+    try{
+        const foundMovie = await Movie.findById(id)
+        res.render("movies/Show", { movie })
+    }catch (err){
+        console.log(err)
+        res.json({err})
+    }
+})
+
+//////////////////////////////////////////////
 // Server Listener
 //////////////////////////////////////////////
 const PORT = process.env.PORT;

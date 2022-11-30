@@ -37,3 +37,18 @@ Semantic Grouping Tags
 <footer></footer>Closing, Conclusion or Ending Content of the body, section, or article.. Usually Copyright and Footer navigation information outside the main content of site
 <nav></nav>Navigation links often a child of header or footer
 <aside></aside>Indirectly related non vital content, usually used for sidebars.
+
+Most used HTML tags
+<h1></h1>Heading from h1 through h6
+<p></p>Paragraph
+<img src="imgsource" alt="alternative text"/>Image tags
+<ul></ul>Unordered list and <ol></ol>ordered list
+<li></li>A list item inside a list
+<pre></pre>Preformatted text
+<br/>Line break
+<hr/>Horizontal Rule Tag
+<a href="website to go to"> Text to display for link</a>Anchor tag to make hyperlinks
+<em></em>Emphasis tag
+<strong></strong>Strong text tag
+<span></span>Inline text
+<div></div>Non semantic division tag to designate a block of text, shouldn't be abused
