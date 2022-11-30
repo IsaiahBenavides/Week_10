@@ -28,3 +28,12 @@ URL	HTTP Verb	Action	Used For	Mongoose Model Function
 
 Seed Route: A route on our server when requested will delete everything in our database and re-seed it with some starter data
 Seed File: A script we can run (usually called seed.js) that'll empty and re-seed our database.
+
+Semantic Grouping Tags
+<header></header>Intruductory content of the body, section, or article.
+<main></main>Main Content of the body
+<article></article>Self-Contained Content that can be distributed on its own and would make sense
+<section></section>Thematically grouped content that is not distributable
+<footer></footer>Closing, Conclusion or Ending Content of the body, section, or article.. Usually Copyright and Footer navigation information outside the main content of site
+<nav></nav>Navigation links often a child of header or footer
+<aside></aside>Indirectly related non vital content, usually used for sidebars.

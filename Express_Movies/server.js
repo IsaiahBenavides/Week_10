@@ -117,8 +117,50 @@ app.get("/movies/seed", (req,res)=>{
             watchAgain: false,
             cast: ["Alan Bagh", "Whitney Moore"]
         }
-    ]
+    ];
+
+    
+    // Delete all movies
+    Movie.deleteMany({}).then((data)=>{
+        // Seed Starter Movies
+        Movie.create(startMovies).then((data)=>{
+            // Send created movies as response to confirm creation
+            res.json(data);
+        })
+    })
 })
+
+// Index route
+// The Async/Await Method
+app.get("/movies", async (req, res) => {
+    try{
+        const movies = await movies.find({});
+        res.render("movies/Index", { movies });
+    }catch(err){
+        res.json({err})
+    }
+});
+
+// The .then Method
+// app.get("/movies", (req, res) => {
+//     // find all the movies
+//     movie.find({})
+//       // render a template after they are found
+//       .then((movies) => {
+//         res.render("movies/Index", { movies });
+//       })
+//       // send error as json if they aren't
+//       .catch((error) => {
+//         res.json({ error });
+//       });
+//   });
+
+//   Callback Method
+// app.get("/movies", (req, res) => {
+//   movie.find({}, (err, movies) => {
+//     res.render("movies/Index", { movies });
+//   });
+// });
 
   //////////////////////////////////////////////
 // Server Listener
