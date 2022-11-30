@@ -1,0 +1,27 @@
+
+URL	HTTP Verb	Action	Used For	Mongoose Model Function
+/fruits/	GET	index	Displaying a list of all fruits	.find
+/fruits/new	GET	new	Display HTML form for creating a new fruit	N/A
+/fruits	POST	create	Create a new fruit	.create
+/fruits/:id	GET	show	Display a specific fruit	.findById
+/fruits/:id/edit	GET	edit	Return an HTML form for editing a fruit	.findById
+/fruits/:id	PATCH/PUT	update	Update a specific fruit	.findByIdAndUpdate
+/fruits/:id	DELETE	destroy	Delete a specific fruit	.findByIdAndDelete
+
+URL	HTTP Verb	Action	Used For	Mongoose Model Function
+/logs/	GET	index	Displaying a list of all logs	.find
+/logs/new	GET	new	Display HTML form for creating a new log	N/A
+/logs	POST	create	Create a new log	.create
+/logs/:id	GET	show	Display a specific log	.findById
+/logs/:id/edit	GET	edit	Return an HTML form for editing a log	.findById
+/logs/:id	PATCH/PUT	update	Update a specific log	.findByIdAndUpdate
+/logs/:id	DELETE	destroy	Delete a specific log	.findByIdAndDelete
+URL	HTTP Verb	Action	Used For	Mongoose Model Function
+
+/things/	GET	index	Displaying a list of all things	.find
+/things/new	GET	new	Display HTML form for creating a new thing	N/A
+/things	POST	create	Create a new thing	.create
+/things/:id	GET	show	Display a specific thing	.findById
+/things/:id/edit	GET	edit	Return an HTML form for editing a thing	.findById
+/things/:id	PATCH/PUT	update	Update a specific thing	.findByIdAndUpdate
+/things/:id	DELETE	destroy	Delete a specific thing	.findByIdAndDelete
