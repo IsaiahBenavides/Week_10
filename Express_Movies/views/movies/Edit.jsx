@@ -6,7 +6,7 @@ class Edit extends React.Component {
     const { movie } = this.props;
     return (
       <DefaultLayout>
-        <a href="/movies">Back</a>
+        <a href={`/movies/${movie._id}`}><button>Back</button></a>
         <form action={`/movies/${movie._id}?_method=PUT`} method="POST">
           <fieldset>
             <legend>Edit {movie.title}</legend>

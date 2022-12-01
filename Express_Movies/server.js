@@ -1,12 +1,16 @@
-// require(`dotenv`).config();
+/////////////////////////////////////////////
+// Import Our Dependencies
+/////////////////////////////////////////////
+require(`dotenv`).config();
 const express = require(`express`);
 const morgan = require(`morgan`);
 const methodOverride = require(`method-override`);
 // const mongoose = require(`mongoose`);
+const Movie = require("./models/movie")
 const path = require(`path`);
 
 // /////////////////////////////////////////////
-// // Database Connection (Moved to conections during refactor) 
+// // Database Connection //////////////////////// (Moved to conections during refactor) ////////////////////////
 // /////////////////////////////////////////////
 
 // // Setup inputs for our connect function
@@ -26,7 +30,7 @@ const path = require(`path`);
 //   .on("error", (error) => console.log(error));
 
 // ////////////////////////////////////////////////
-// // Our Models (Moved from server to movie during refactor)
+// // Our Models //////////////////////// (Moved from server to movie during refactor) ////////////////////////
 // ////////////////////////////////////////////////
 // // pull schema and model from mongoose using object destructuring
 // const { Schema, model } = mongoose;

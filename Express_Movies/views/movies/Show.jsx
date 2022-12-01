@@ -29,7 +29,7 @@ class Show extends React.Component {
                 ? "I would watch this again!"
                 : "You gotta pay me to watch this again..."}
             </p>
-            <a href={`/movies/${movie._id}/Edit`}>Edit</a>
+            <a href={`/movies/${movie._id}/Edit`}><button>Edit</button></a>
             <form action={`/movies/${movie._id}?_method=DELETE`} method="POST">
               <input type="submit" value="Delete" />
             </form>
