@@ -73,3 +73,4 @@ Update or PUTworks very similar to a POSTrequest. We are still sending along som
 Delete
 Delete does just as the name implies, it DELETE's something from our data source. We target the specific piece of information in the same way we did with our PUTrequest. This sends a request to the server to DELETEthis item.
 
+Seperation of concerns should make functionality be put with similar functionality.
