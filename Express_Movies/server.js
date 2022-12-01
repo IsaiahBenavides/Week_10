@@ -8,7 +8,7 @@ const methodOverride = require(`method-override`);
 // const mongoose = require(`mongoose`);
 const Movie = require("./models/movie")
 const path = require(`path`);
-const movies = require("./controllers/movies")
+const moviesController = require("./controllers/movies")
 
 // /////////////////////////////////////////////
 // // Database Connection //////////////////////// (Moved to conections during refactor) ////////////////////////
@@ -70,7 +70,7 @@ app.use(express.static("public")); // serve files from public statically
 ////////////////////////////////////////////
 // Routes //////////////////////// (Moved to movies.js in controllers during refactor) ////////////////////////
 ////////////////////////////////////////////
-app.use("/movies", movies)
+app.use("/movies", moviesController)
 // app.get("/", (req, res) => {
 //   res.send("your server is running... better catch it.");
 // });
