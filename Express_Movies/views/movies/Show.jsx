@@ -7,16 +7,17 @@ class Show extends React.Component {
     return (
       <DefaultLayout>
         <div>
+            <a href={`/movies/`}>
+              <button>Back to Main</button>
+            </a>
           <article>
             <h2>{movie.title}</h2>
-                <img src={movie.poster} alt="" />
+            <img src={movie.poster} alt="" />
             <h3>Staring:</h3>
             <ul>
-                {movie.cast.map((star) => {
-                    return(
-                        <li>{star}</li>
-                    )
-                })}
+              {movie.cast.map((star) => {
+                return <li>{star}</li>;
+              })}
             </ul>
             <h4> Directed by: {movie.director}</h4>
             <p>
@@ -29,13 +30,12 @@ class Show extends React.Component {
                 ? "I would watch this again!"
                 : "You gotta pay me to watch this again..."}
             </p>
-            <a href={`/movies/${movie._id}/Edit`}><button>Edit</button></a>
+            <a href={`/movies/${movie._id}/Edit`}>
+              <button>Edit</button>
+            </a>
             <form action={`/movies/${movie._id}?_method=DELETE`} method="POST">
               <input type="submit" value="Delete" />
             </form>
-            <a href={`/movies/`}>
-              <button>Back to Main</button>
-            </a>
           </article>
         </div>
       </DefaultLayout>
@@ -43,4 +43,4 @@ class Show extends React.Component {
   }
 }
 
-module.exports = Show
+module.exports = Show;

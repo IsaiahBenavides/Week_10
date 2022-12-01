@@ -174,65 +174,65 @@ app.get("/movies/new", (req, res) => {
 
 //DELETE
 app.delete("/movies/:id", (req, res) => {
-    // get the id from params
-    const id = req.params.id;
-    // delete the fruit
-    Movie.findByIdAndRemove(id)
-      .then((movie) => {
-        // redirect to main page after deleting
-        res.redirect("/movies");
-      })
-      // send error as json
-      .catch((error) => {
-        console.log(error);
-        res.json({ error });
-      });
-  });
+  // get the id from params
+  const id = req.params.id;
+  // delete the fruit
+  Movie.findByIdAndRemove(id)
+    .then((movie) => {
+      // redirect to main page after deleting
+      res.redirect("/movies");
+    })
+    // send error as json
+    .catch((error) => {
+      console.log(error);
+      res.json({ error });
+    });
+});
 
 //UPDATE
-  app.put("/movies/:id", async (req, res) => {
-      try {
-        const id = req.params.id;
-        req.body.watchAgain = req.body.watchAgain === "on" ? true : false;
-        req.body.cast = req.body.cast.split(",")
-        await Movie.findByIdAndUpdate(id, req.body)
-        res.redirect(`/movies/${id}`)
-      } catch (error) {
-        console.log(error);
-        res.json({ error });
-      }
-    })
+app.put("/movies/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    req.body.watchAgain = req.body.watchAgain === "on" ? true : false;
+    req.body.cast = req.body.cast.split(",")
+    await Movie.findByIdAndUpdate(id, req.body)
+    res.redirect(`/movies/${id}`)
+  } catch (error) {
+    console.log(error);
+    res.json({ error });
+  }
+})
 
 // CREATE
 app.post("/movies", async (req, res) => {
-    try {
-      req.body.watchAgain = req.body.watchAgain === "on" ? true : false;
-      req.body.cast = req.body.cast.split(",")
-      console.log(req.body)
-      const createdMovie = await Movie.create(req.body)
-      res.redirect("/movies")
-    } catch (error) {
-      console.log(error);
-      res.json({ error });
-    }
-  })
+  try {
+    req.body.watchAgain = req.body.watchAgain === "on" ? true : false;
+    req.body.cast = req.body.cast.split(",")
+    console.log(req.body)
+    const createdMovie = await Movie.create(req.body)
+    res.redirect("/movies")
+  } catch (error) {
+    console.log(error);
+    res.json({ error });
+  }
+})
 
 //EDIT
 app.get("/movies/:id/edit", (req, res) => {
-    // get the id from params
-    const id = req.params.id;
-    // get the movie from the database
-    Movie.findById(id)
-      .then((movie) => {
-        // render Edit page and send movie data
-        res.render("movies/Edit.jsx", { movie });
-      })
-      // send error as json
-      .catch((error) => {
-        console.log(error);
-        res.json({ error });
-      });
-  });
+  // get the id from params
+  const id = req.params.id;
+  // get the movie from the database
+  Movie.findById(id)
+    .then((movie) => {
+      // render Edit page and send movie data
+      res.render("movies/Edit.jsx", { movie });
+    })
+    // send error as json
+    .catch((error) => {
+      console.log(error);
+      res.json({ error });
+    });
+});
 
 // SHOW
 app.get("/movies/:id", async (req, res) => {
